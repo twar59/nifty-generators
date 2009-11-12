@@ -1,3 +1,11 @@
+<% if use_formtastic? -%>
+- semantic_form_for @<%= singular_name %> do |f|
+  - f.inputs do
+  <%- for attribute in attributes -%>
+    = f.input :<%= attribute.name %>
+  <%- end -%>
+  = f.buttons
+<%- else -%>
 - form_for @<%= singular_name %> do |f|
   = f.error_messages
   <%- for attribute in attributes -%>
@@ -8,3 +16,4 @@
   <%- end -%>
   %p
     = f.submit "Submit"
+<%- end %>
