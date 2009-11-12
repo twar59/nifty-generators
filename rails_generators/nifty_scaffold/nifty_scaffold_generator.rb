@@ -207,10 +207,6 @@ protected
     File.exist?(destination_path("spec")) ? :rspec : :testunit
   end
   
-  def use_formtastic?
-    options[:forms] && options[:forms] == :formtastic
-  end
-  
   def add_options!(opt)
     opt.separator ''
     opt.separator 'Options:'
@@ -226,7 +222,6 @@ protected
     opt.on("--testunit", "Use test/unit for test files.") { options[:test_framework] = :testunit }
     opt.on("--rspec", "Use RSpec for test files.") { options[:test_framework] = :rspec }
     opt.on("--shoulda", "Use Shoulda for test files.") { options[:test_framework] = :shoulda }
-    opt.on("--formtastic", "Use Formtastic forms.") { options[:forms] = :formtastic }
   end
   
   # is there a better way to do this? Perhaps with const_defined?
