@@ -2,6 +2,6 @@
   - form.inputs do
   <%- for attribute in attributes -%>
     = form.input :<%= attribute.name %>, :label => '<%= attribute.name.humanize %>'
-	<%- end -%>
+  <%- end -%>
   - form.buttons do
     = form.commit_button 'Submit'
